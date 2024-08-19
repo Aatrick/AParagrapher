@@ -38,6 +38,14 @@ def paragrapher(file):
         ):
             text_list[i + 1] = "\n\n"
             char_count = 0
+        if (
+            text_list[i] == " "
+            and i + 1 < len(text_list)
+            and text_list[i + 1] == "*"
+        ):
+            text_list[i] = "\n\n"
+            text_list[i + 1] = "*\n\n"
+            char_count = 0
         # if (
         #     text_list[i] == ","
         #     and i + 2 < len(text_list)
